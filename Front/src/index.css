@@ -1,0 +1,39 @@
+/* Estilos globais da aplicação */
+:root {
+  --cor-principal: #8b4a62;
+  --cor-principal-escura: #6e3a4e;
+  --cor-fundo: #fbf6f2;
+  --cor-texto: #3a2e2a;
+  --cor-borda: #e6dcd5;
+  --cor-perigo: #c0392b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.conteudo {
+  flex: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+h2 {
+  margin-bottom: 16px;
+}
