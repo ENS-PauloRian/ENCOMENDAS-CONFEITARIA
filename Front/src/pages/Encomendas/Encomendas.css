@@ -1,0 +1,74 @@
+.encomendas-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.encomendas-topo h2 {
+  margin-bottom: 0;
+}
+
+.encomendas-erro {
+  color: var(--cor-perigo);
+  margin-bottom: 12px;
+}
+
+.tabela-container {
+  overflow-x: auto;
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border: 1px solid var(--cor-borda);
+}
+
+.tabela th,
+.tabela td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--cor-borda);
+  vertical-align: middle;
+}
+
+.tabela th {
+  background-color: #f1e8e2;
+  font-size: 0.85rem;
+}
+
+.telefone {
+  display: block;
+  color: #888;
+}
+
+.acoes {
+  display: flex;
+  gap: 6px;
+}
+
+.status {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.status-pendente {
+  background-color: #fff1c2;
+  color: #8a6d00;
+}
+
+.status-em-produção {
+  background-color: #d8e8ff;
+  color: #1f4e8c;
+}
+
+.status-entregue {
+  background-color: #d6f5dd;
+  color: #1e7a35;
+}

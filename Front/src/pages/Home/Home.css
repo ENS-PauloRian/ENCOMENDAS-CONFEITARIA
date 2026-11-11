@@ -1,0 +1,25 @@
+.home p {
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.home-atalhos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.home-card {
+  background-color: white;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: 24px 32px;
+  text-decoration: none;
+  color: var(--cor-principal);
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.home-card:hover {
+  border-color: var(--cor-principal);
+}
