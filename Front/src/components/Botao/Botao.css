@@ -1,0 +1,26 @@
+.botao {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.botao:hover {
+  opacity: 0.85;
+}
+
+.botao-primario {
+  background-color: var(--cor-principal);
+  color: white;
+}
+
+.botao-secundario {
+  background-color: #e0d6cf;
+  color: var(--cor-texto);
+}
+
+.botao-perigo {
+  background-color: var(--cor-perigo);
+  color: white;
+}

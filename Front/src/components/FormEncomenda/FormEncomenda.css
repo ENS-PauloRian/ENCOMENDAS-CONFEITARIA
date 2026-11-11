@@ -1,0 +1,39 @@
+.form-encomenda {
+  background-color: white;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 640px;
+}
+
+.form-encomenda label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  flex: 1;
+}
+
+.form-encomenda input,
+.form-encomenda select {
+  padding: 8px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 5px;
+  font-size: 0.95rem;
+  font-weight: normal;
+}
+
+.form-linha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.form-acoes {
+  display: flex;
+  gap: 10px;
+}
