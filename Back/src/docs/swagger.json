@@ -1,0 +1,108 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Encomendas da Confeitaria",
+    "version": "1.0.0",
+    "description": "API REST para cadastrar, listar, alterar e excluir encomendas."
+  },
+  "servers": [{ "url": "http://localhost:3000" }],
+  "tags": [{ "name": "Encomendas" }],
+  "paths": {
+    "/encomendas": {
+      "get": {
+        "tags": ["Encomendas"],
+        "summary": "Lista todas as encomendas",
+        "responses": {
+          "200": {
+            "description": "Lista de encomendas",
+            "content": {
+              "application/json": {
+                "schema": { "type": "array", "items": { "$ref": "#/components/schemas/Encomenda" } }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Encomendas"],
+        "summary": "Cadastra uma nova encomenda",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": { "schema": { "$ref": "#/components/schemas/EncomendaInput" } }
+          }
+        },
+        "responses": {
+          "201": { "description": "Encomenda cadastrada" },
+          "400": { "description": "Dados inválidos" }
+        }
+      }
+    },
+    "/encomendas/{id}": {
+      "parameters": [
+        { "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }
+      ],
+      "get": {
+        "tags": ["Encomendas"],
+        "summary": "Busca uma encomenda pelo ID",
+        "responses": {
+          "200": {
+            "description": "Encomenda encontrada",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/Encomenda" } }
+            }
+          },
+          "404": { "description": "Encomenda não encontrada" }
+        }
+      },
+      "put": {
+        "tags": ["Encomendas"],
+        "summary": "Altera uma encomenda",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": { "schema": { "$ref": "#/components/schemas/EncomendaInput" } }
+          }
+        },
+        "responses": {
+          "200": { "description": "Encomenda alterada" },
+          "404": { "description": "Encomenda não encontrada" }
+        }
+      },
+      "delete": {
+        "tags": ["Encomendas"],
+        "summary": "Exclui uma encomenda",
+        "responses": {
+          "204": { "description": "Encomenda excluída" },
+          "404": { "description": "Encomenda não encontrada" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "EncomendaInput": {
+        "type": "object",
+        "required": ["enc_cliente", "enc_produto", "enc_quantidade", "enc_data_entrega"],
+        "properties": {
+          "enc_cliente": { "type": "string", "example": "Maria Souza" },
+          "enc_telefone": { "type": "string", "example": "(42) 99999-0000" },
+          "enc_produto": { "type": "string", "example": "Bolo de chocolate" },
+          "enc_quantidade": { "type": "integer", "example": 1 },
+          "enc_data_entrega": { "type": "string", "format": "date", "example": "2026-11-20" },
+          "enc_status": {
+            "type": "string",
+            "enum": ["Pendente", "Em produção", "Entregue"],
+            "example": "Pendente"
+          }
+        }
+      },
+      "Encomenda": {
+        "allOf": [
+          { "type": "object", "properties": { "enc_id": { "type": "integer", "example": 1 } } },
+          { "$ref": "#/components/schemas/EncomendaInput" }
+        ]
+      }
+    }
+  }
+}
